@@ -1,0 +1,142 @@
+<!-- <mat-card appearance="outlined" class="bg-white mt-3 d-flex justify-content-center col-lg-8 col-md-9 col-sm-12">
+  <div class="w-100">
+    <mat-card-content>
+      <div class="row">
+        
+        <div class="col-md-3">
+          <ems-text label="Customer Name" [isViewOnly]="true" [modelValue]="customerDetails?.customerName"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="Email" [isViewOnly]="true" [modelValue]="customerDetails?.email"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="Contact Number" [isViewOnly]="true" [modelValue]="customerDetails?.contactNumber"></ems-text>
+        </div>
+       
+        <h6 class="my-3 mat-text-primary col-12">Address Information</h6>
+        <div class="col-md-5">
+          <ems-text label="Address Line 1" [isViewOnly]="true" [modelValue]="customerDetails?.addressLine1"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="Address Line 2" [isViewOnly]="true" [modelValue]="customerDetails?.addressLine2"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="City" [isViewOnly]="true" [modelValue]="customerDetails?.city"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="State" [isViewOnly]="true" [modelValue]="customerDetails?.state"></ems-text>
+        </div>
+        <div class="col-md-2">
+          <ems-text label="Zip/Postal Code" [isViewOnly]="true" [modelValue]="customerDetails?.zipCode"></ems-text>
+        </div>
+        <div class="col-md-2">
+          <ems-text label="Country" [isViewOnly]="true" [modelValue]="customerDetails?.country"></ems-text>
+        </div>
+        
+        <h6 class="my-3 mat-text-primary col-12">Bank Details</h6>
+        <div class="col-md-5">
+          <ems-text label="Bank Name" [isViewOnly]="true" [modelValue]="customerDetails?.bankName"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="IFSC Code" [isViewOnly]="true" [modelValue]="customerDetails?.ifscCode"></ems-text>
+        </div>
+        <div class="col-md-4">
+          <ems-text label="Account Number" [isViewOnly]="true" [modelValue]="customerDetails?.accountNumber"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="Account Holder Name" [isViewOnly]="true" [modelValue]="customerDetails?.accountHolderName"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="UDYAM Registration No." [isViewOnly]="true" [modelValue]="customerDetails?.udyamRegNo"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="GSTIN" [isViewOnly]="true" [modelValue]="customerDetails?.gstin"></ems-text>
+        </div>
+        
+        
+        <div class="col-12 d-flex justify-content-center mt-3">
+          <button mat-raised-button color="primary" [routerLink]="['/app/customers/add-edit', customerDetails?.customerId]">Edit</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card> -->
+
+
+<mat-card appearance="outlined" class="bg-white mt-3 d-flex justify-content-center col-lg-8 col-md-9 col-sm-12">
+  <div class="w-100" *ngIf="customerData">
+    <mat-card-content>
+      <div class="row">
+     
+        <div class="col-md-3">
+          <ems-text label="Customer Name" [isViewOnly]="true" [modelValue]="customerData?.customerName"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="Email" [isViewOnly]="true" [modelValue]="customerData?.email"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="Contact Number" [isViewOnly]="true" [modelValue]="customerData?.contactNumber"></ems-text>
+        </div>
+       
+        <h6 class="my-3 mat-text-primary col-12">Address Information</h6>
+        <div class="col-md-5">
+          <ems-text label="Address Line 1" [isViewOnly]="true" [modelValue]="customerData?.addressLine1"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="Address Line 2" [isViewOnly]="true" [modelValue]="customerData?.addressLine2"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="City" [isViewOnly]="true" [modelValue]="customerData?.city"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="State" [isViewOnly]="true" [modelValue]="customerData?.state"></ems-text>
+        </div>
+        <div class="col-md-2">
+          <ems-text label="Zip/Postal Code" [isViewOnly]="true" [modelValue]="customerData?.zipCode"></ems-text>
+        </div>
+        <div class="col-md-2">
+          <ems-text label="Country" [isViewOnly]="true" [modelValue]="customerData?.country"></ems-text>
+        </div>
+        
+        <h6 class="my-3 mat-text-primary col-12">Bank Details</h6>
+        <div class="col-md-5">
+          <ems-text label="Bank Name" [isViewOnly]="true" [modelValue]="customerData?.bankName"></ems-text>
+        </div>
+        <div class="col-md-3">
+          <ems-text label="IFSC Code" [isViewOnly]="true" [modelValue]="customerData?.ifscCode"></ems-text>
+        </div>
+        <div class="col-md-4">
+          <ems-text label="Account Number" [isViewOnly]="true" [modelValue]="customerData?.accountNumber"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="Account Holder Name" [isViewOnly]="true" [modelValue]="customerData?.accountHolderName"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="UDYAM Registration No." [isViewOnly]="true" [modelValue]="customerData?.udyamRegNo"></ems-text>
+        </div>
+        <div class="col-md-5">
+          <ems-text label="GSTIN" [isViewOnly]="true" [modelValue]="customerData?.gstin"></ems-text>
+        </div>
+        
+
+         <!-- <div class="col-12 d-flex justify-content-center mt-3">
+          <button mat-raised-button color="primary" [routerLink]="['/app/customers//${this.customerData.customerId']">Edit</button>
+        </div>  -->
+        
+        <div class="col-12 d-flex justify-content-center mt-3">
+          <button mat-raised-button color="primary" [routerLink]="['/app/customers/edit-customer', customerData?.id]">Edit</button>
+        </div>
+
+
+      </div>
+    </mat-card-content>
+  </div>
+
+  <div *ngIf="!customerData" class="text-center">
+    <p>Loading customer details...</p>
+  </div>
+
+
+
+
+</mat-card>

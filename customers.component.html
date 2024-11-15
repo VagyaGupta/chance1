@@ -1,0 +1,30 @@
+<p>customers works!</p>
+<p>Customers</p>
+<div class="row">
+    <div class="col-md-11 col-sm-12 py-3">
+        <ems-table *ngIf="columnDefs" 
+            [columnDefs]="columnDefs" 
+            [rowData]="rowData" 
+            [showTableName]="true"
+            tableName="Customers" 
+            [enableFilter]="false" 
+            [showRefresh]="false" 
+            nowRowsMessage="No customer found"
+            [showColumnFilter]="false"
+            (resetClicked)="initTable()">
+            <div class="d-flex justify-content-end align-items-center">
+                <!-- <ng-container>
+                    <ems-toggle [modelValue]="isEyeButtonEnabled" (onChange)="toggleEyeButton()" labelPosition="before" class="fs-18 small">
+                        Show Separated
+                    </ems-toggle>
+                </ng-container> -->
+                <ng-container >
+                    <button mat-button type="button" color="primary" (click)="addCustomer()" class="ms-3 fw-bold fs-18 small">
+                        <mat-icon color="primary" class="material-icons">
+                            add_circle_outline
+                        </mat-icon> Add Customer </button>
+                </ng-container>
+            </div>
+        </ems-table>
+    </div>
+</div>

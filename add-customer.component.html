@@ -1,0 +1,85 @@
+<p>add-customer works!</p>
+
+<mat-card appearance="outlined" class="bg-white mt-3 d-flex justify-content-center col-lg-8 col-md-9 col-sm-12">
+    <div class="w-100">
+        <mat-card-content>
+            <form *ngIf="form" [formGroup]="form">
+                <div class="row d-flex justify-content-start p-0">
+                    <ng-container *ngIf="!isEdit; else elseTemplate">
+                        <div class="col-md-3">
+                            <ems-text label="Customer Name" [isDisabled]="isEdit" [group]="form" name="customerName" type="text"></ems-text>
+                        </div>
+                        <div class="col-md-3">
+                            <ems-text label="Email" [isDisabled]="isEdit" [group]="form" name="email" type="email"></ems-text>
+                        </div>
+                        <div class="col-md-3">
+                            <ems-text label="Contact Number" [isDisabled]="isEdit" [group]="form" name="contactNumber" [numberOnly]="true" [maxLength]="10"></ems-text>
+                        </div>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="col-md-3 col-6">
+                            <ems-text label="Customer Name" [isViewOnly]="true" [modelValue]="customerDetails.customerName"></ems-text>
+                        </div>
+                        <div class="col">
+                            <ems-text label="Email" [isViewOnly]="true" [modelValue]="customerDetails.email"></ems-text>
+                        </div>
+                    </ng-template>
+
+                    <h6 class="my-3 mat-text-primary col-12">Address Information</h6>
+                    <div class="col-md-5">
+                        <ems-text label="Address Line 1" [group]="form" name="addressLine1" type="text"></ems-text>
+                    </div>
+                    <div class="col-md-5">
+                        <ems-text label="Address Line 2" [group]="form" name="addressLine2" type="text"></ems-text>
+                    </div>
+                    <div class="col-md-3">
+                        <ems-text label="City" [group]="form" name="city" type="text"></ems-text>
+                    </div>
+                    <div class="col-md-3">
+                        <ems-text label="State" [group]="form" name="state" type="text"></ems-text>
+                    </div>
+                    <div class="col-md-2">
+                        <ems-text label="Zip/Postal Code" [group]="form" name="zipCode" [numberOnly]="true" [maxLength]="6"></ems-text>
+                    </div>
+                    <div class="col-md-2">
+                        <ems-text label="Country" [group]="form" name="country" type="text"></ems-text>
+                    </div>
+
+                    <h6 class="my-3 mat-text-primary col-12">Financial & Tax Information</h6>
+                    <div class="col-md-5">
+                        <ems-text label="Bank Name" [group]="form" name="bankName" type="text"></ems-text>
+                    </div>
+                    <div class="col-md-3">
+                        <ems-text label="IFSC Code" [group]="form" name="ifscCode" [alphaNumericOnly]="true"></ems-text>
+                    </div>
+                    <div class="col-md-4">
+                        <ems-text label="Account Number" [group]="form" name="accountNumber" [numberOnly]="true"></ems-text>
+                    </div>
+                    
+                    <div class="col-md-5">
+                        <ems-text label="Account Holder Name" [group]="form" name="accountHolderName" type="text"></ems-text>
+                    </div>
+                    
+                    <div class="col-md-5">
+                        <ems-text label="UDYAM Registration No." [group]="form" name="udyamRegNo" type="text"></ems-text>
+                    </div>
+                    <div class="col-md-5">
+                        <ems-text label="GSTIN" [group]="form" name="gstin" type="text"></ems-text>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-center mt-3 col-sm-12">
+                    <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">{{isEdit ? 'Update' : 'Add'}}</button>
+                    <!-- <button type="button"
+                        [routerLink]="'/app/customers' + (customerDetails ? ('/details/'+customerDetails.id) : '')"
+                        mat-button class="me-2">Cancel</button> -->
+
+                        <button type="button" mat-button class="me-2" (click)="onCancel()">Cancel</button>
+
+                </div>
+            </form>
+        </mat-card-content>
+    </div>
+</mat-card>
+
